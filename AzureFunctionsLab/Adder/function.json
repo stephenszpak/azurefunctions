@@ -1,0 +1,35 @@
+﻿//this is copied from the function.json that you find in the mac finder
+//click on project and hit 'reveal in finder', navigate to the function.json ( bin > debug ...)
+//the commented out lines of code are not necessary and should be removed
+
+{
+  //"configurationSource": "attributes",
+  //"generatedBy": "Microsoft.NET.Sdk.Functions-1.0.13",
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "methods": [
+        "get"
+      ],
+      "authLevel": "function",
+      "name": "req",
+      "direction": "in",
+      "route": "Adder/{x:int?}/{y:int?}"
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    }
+  ],
+  "disabled": false,
+  "scriptFile": "../bin/AzureFunctionsLab.dll",
+  "entryPoint": "AzureFunctionsLab.Add.Add2"
+} 
+
+
+
+// The one final step required to make this all work is to instruct Visual Studio for Mac 
+// to copy this file to the same relative path in the output directory every time it changes. 
+// With the file selected, choose the properties tab from the right-hand bar,
+// and for *Copy to output directory* select *Copy if newer*:
